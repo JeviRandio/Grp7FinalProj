@@ -63,6 +63,14 @@ body {
 
 .carousel #pane {
 	display: none;
+	position: absolute;
+	right: 10%;
+	background: rgba(0, 64, 0, 0.6);
+	color: white;
+	height: 100%;
+	top: 0%;
+	z-index: 1;
+	width: 20%;
 }
 #pane ul {
 	list-style: none;
@@ -79,6 +87,25 @@ body {
 
 .gradient-line:nth-of-type(2) {
 	background: linear-gradient(to left, transparent, white 100%);
+}
+
+#welcome {
+	position: absolute;
+	top: 12%;
+	z-index: 1;
+}
+#welcome img {
+	height: 40px;
+	width: 300px;
+	object-fit: cover;
+	object-position: center right;
+	filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+}
+#welcome p {
+	position: absolute;
+	color: white;
+	top: 50%;
+	transform: translateY(-60%)
 }
 
 .fade-in {
@@ -128,8 +155,6 @@ body {
 	font-size: 80%
 }
 
-
-
 @media (min-width: 768px) {
 	#levels {
 		height: 35vh;
@@ -143,14 +168,17 @@ body {
 	}
 	.carousel #pane {
 		display: block;
+	}
+	#welcome img {
+		height: 60px;
+		width: 500px;
+	}
+	#welcome p {
 		position: absolute;
-		right: 10%;
-		background: rgba(0, 64, 0, 0.6);
 		color: white;
-		height: 100%;
-		top: 0%;
-		z-index: 1;
-		width: 20%;
+		top: 50%;
+		transform: translateY(-60%);
+		font-size: 140%;
 	}
 }
 
