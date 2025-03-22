@@ -7,7 +7,7 @@
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg border-bottom border-light border-5">
+	<nav class="navbar navbar-expand-lg border-bottom border-light border-3">
 		<div class="container-fluid mx-4">
 			<a class="navbar-brand col-8 col-md-2" href="#">
 				<img src="images/logo.png" alt="Logo" class="d-inline-block align-text-top img-fluid ">
@@ -33,6 +33,33 @@
 			</div>
 		</div>
 	</nav>
+	
+	<div id="carouse" class="carousel slide" data-bs-touch="false" data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="false">
+	  <div class="carousel-inner">
+		<div class="carousel-item active">
+		  <img src="images/preview1.jpg" class="d-block w-100 carousel-img">
+		</div>
+		<div class="carousel-item">
+		  <img src="images/preview2.jpg" class="d-block w-100 carousel-img">
+		</div>
+		<div class="carousel-item">
+		  <img src="images/preview3.jpg" class="d-block w-100 carousel-img">
+		</div>
+		<div class="carousel-item">
+		  <img src="images/preview4.jpg" class="d-block w-100 carousel-img">
+		</div>
+		<div class="carousel-item">
+		  <img src="images/preview5.jpg" class="d-block w-100 carousel-img">
+		</div>
+	  </div>
+	  <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouse" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouse" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouse" data-bs-slide-to="2"></button>
+		<button type="button" data-bs-target="#carouse" data-bs-slide-to="3"></button>
+		<button type="button" data-bs-target="#carouse" data-bs-slide-to="4"></button>
+    </div>
+	</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
