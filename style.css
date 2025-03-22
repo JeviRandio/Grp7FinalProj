@@ -23,8 +23,18 @@ body {
 	color: #aaa;
 }
 
+.nav-link:not(.active):hover {
+    color: gold !important;
+}
+
 .active {
 	color: white !important;
+	user-select: none !important;
+}
+
+.carousel {
+	box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.6);
+	z-index: 1;
 }
 
 .carousel::after { /*VIGNETTE EFFECT TO THE CAROUSEL*/
@@ -49,4 +59,64 @@ body {
 
 .carousel-item {
     height: 100%;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#levels {
+	background: radial-gradient(circle at top center, #ddd, #bbb);
+}
+
+#levels > div {
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+#levels .col-12 {
+	cursor: pointer;
+}
+
+#levels p {
+	transition: color 0.3s;
+}
+
+#levels .col-12:hover p {
+	color: #960
+}
+
+#levels img {
+	width: 80%;
+	aspect-ratio: 1.4;
+	object-fit: cover;
+	object-position: bottom center;
+}
+
+#levels p {
+	margin-bottom: 0;
+}
+
+#levels p:nth-child(3) {
+	font-size: 80%
+}
+
+@media (min-width: 768px) {
+	#levels {
+		height: 35vh;
+	}
+	#levels > div {
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+	#levels img {
+		aspect-ratio: 1;
+	}
 }
