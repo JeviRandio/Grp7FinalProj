@@ -1,0 +1,22 @@
+body {
+}
+
+.navbar {
+	background: #060
+}
+
+.navbar-brand img {
+	border: 3px solid white;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.nav-link {
+	color: #aaa;
+}
+
+.active {
+	color: white !important;
+}
