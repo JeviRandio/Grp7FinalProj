@@ -61,6 +61,26 @@ body {
     height: 100%;
 }
 
+.carousel #pane {
+	display: none;
+}
+#pane ul {
+	list-style: none;
+	padding: 0;
+    margin: 0;
+	font-size: 70%
+}
+
+.gradient-line {
+	border: none;
+    height: 4px;
+    background: linear-gradient(to right, transparent, white 100%);
+}
+
+.gradient-line:nth-of-type(2) {
+	background: linear-gradient(to left, transparent, white 100%);
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -108,6 +128,8 @@ body {
 	font-size: 80%
 }
 
+
+
 @media (min-width: 768px) {
 	#levels {
 		height: 35vh;
@@ -118,5 +140,22 @@ body {
 	}
 	#levels img {
 		aspect-ratio: 1;
+	}
+	.carousel #pane {
+		display: block;
+		position: absolute;
+		right: 10%;
+		background: rgba(0, 64, 0, 0.6);
+		color: white;
+		height: 100%;
+		top: 0%;
+		z-index: 1;
+		width: 20%;
+	}
+}
+
+@media (min-width: 992px) {
+	#pane .fs-5 {
+		font-size: 170% !important;
 	}
 }
