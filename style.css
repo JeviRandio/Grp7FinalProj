@@ -1,4 +1,10 @@
+@font-face {
+	font-family: coustard;
+	src: url(fonts/Coustard-Regular.ttf);
+}
+
 body {
+	font-family: coustard;
 }
 
 .navbar {
