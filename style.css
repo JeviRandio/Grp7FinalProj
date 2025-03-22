@@ -8,7 +8,7 @@ body {
 }
 
 .navbar {
-	background: #050
+	background: #040
 }
 
 .navbar-brand img {
@@ -121,6 +121,7 @@ body {
 
 #levels {
 	background: radial-gradient(circle at top center, #ddd, #bbb);
+	padding-bottom: 100px;
 }
 
 #levels > div {
@@ -155,9 +156,32 @@ body {
 	font-size: 80%
 }
 
+#footer {
+	background: #030;
+}
+
+#footer .text-center .text-secondary {
+	font-size: 80%
+}
+
+#footer img {
+	width: 40px;
+	filter: brightness(150%)
+}
+
+#footer .col-9 {
+	font-size: 80%;
+	margin-top: 5px
+}
+
+#followus {
+	transform: translateX(-10px)
+}
+
 @media (min-width: 768px) {
 	#levels {
 		height: 35vh;
+		padding-bottom: 300px;
 	}
 	#levels > div {
 		margin-left: 15%;
