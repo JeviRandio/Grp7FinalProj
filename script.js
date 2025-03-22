@@ -1,3 +1,13 @@
+const popup = document.querySelector("#popup")
+
+document.body.style.overflow = "hidden";
+
+function removeModal() {
+	document.body.style.overflow = "auto";
+	popup.querySelector("div").style.transform = "translate(-50%, -50%) scale(0.01)"
+	setTimeout(() => {popup.style.display = "none"}, 350)
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const fadeElements = document.querySelectorAll(".fade-in");
 
