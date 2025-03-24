@@ -1,6 +1,8 @@
 const popup = document.querySelector("#popup")
 
-document.body.style.overflow = "hidden";
+function disableScroll() {
+	document.body.style.overflow = "hidden";
+}
 
 function removeModal() {
 	document.body.style.overflow = "auto";
