@@ -248,6 +248,14 @@ body {
 	background: #0b0
 }
 
+.registerButton:hover {
+	background: #0a0
+}
+
+.registerButton:active {
+	background: #080
+}
+
 #levelsOptions button {
 	background: linear-gradient(#070, #030);
 	font-size: 85%;
