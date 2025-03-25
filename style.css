@@ -5,6 +5,7 @@
 
 body {
 	font-family: coustard;
+	display: grid;
 }
 
 .navbar {
@@ -166,6 +167,14 @@ body {
 	background: #353
 }
 
+.darkgreen-gradient {
+	background: linear-gradient(#cb8103, #662801)
+}
+
+#levelLists > * {
+	font-size: 80%;
+}
+
 #levels p {
 	margin-bottom: 0;
 }
@@ -176,6 +185,7 @@ body {
 
 #footer {
 	background: #030;
+	order: 10
 }
 
 #footer .text-center .text-secondary {
@@ -238,14 +248,48 @@ body {
 	background: #0b0
 }
 
-#levelOptions button {
+#levelsOptions button {
 	background: linear-gradient(#070, #030);
 	font-size: 85%;
-	user-select: none
+	user-select: none;
+	transition: background 0.3s;
+}
+
+#levelsOptions button:hover {
+	background: linear-gradient(#060, #020);
+}
+
+#levelsOptions button:active {
+	background: linear-gradient(#050, #020);
 }
 
 .active-level {
 	background: linear-gradient(#7a7, #378a37) !important;
+	cursor: default !important;
+}
+
+.requiredField::before {
+	content: " *";
+	color: #d00;
+}
+
+#levelsForm input, #levelsForm select {
+	border: 0
+}
+
+input[type=submit]{
+	width: max-content;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	filter: brightness(85%);
+}
+
+input[type=submit]:active {
+	filter: brightness(70%);
+	transform: translateY(2px);
 }
 
 @media (min-width: 768px) {
@@ -278,7 +322,7 @@ body {
 		font-size: 200% !important;
 	}
 	.text-small {
-		font-size: 90%
+		font-size: 80%
 	}
 	.registerButton {
 		font-size: 120%
@@ -286,6 +330,18 @@ body {
 	.gradientGray #admissionText {
 		display: none;
 	}
+	#levelsOptions button {
+		border: 1.5px solid gray !important;
+		border-radius: 0px !important;
+	}
+	#levelsOptions {order: 2}
+	#levelsPreview {
+		order: 1;
+	}
+	#levelsPreview >div > div {
+		height: 240px;
+	}
+	#levelsForm    {order: 3}
 }
 
 @media (min-width: 992px) {
