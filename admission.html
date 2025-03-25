@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FEU Diliman - Admission</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">	<link href="style.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body class="gradientGray">
+	<nav class="navbar navbar-expand-md border-bottom border-light border-1">
+		<div class="container-fluid mx-4 mx-md-5">
+			<a class="navbar-brand col-8 col-md-2" href="#">
+				<img src="images/logo.png" alt="Logo" class="d-inline-block align-text-top img-fluid ">
+			</a>
+			<button class="navbar-toggler col-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item me-4">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item me-4">
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item me-4">
+						<a class="nav-link active" aria-current="page">Admission</a>
+					</li>
+					<li class="nav-item me-4">
+						<a class="nav-link" href="#">Scholarships</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div id="admissionText" class="text-center fs-2 text-light bg-success py-1 mt-2 text-shadow">Admission</div>
+
+	<div class="container row mx-auto my-2 mt-md-0" id="levelsOptions">
+		<button class="col active-level text-light rounded py-4 border-0 me-1 me-md-0"  onclick="enrollPrimary()">Primary</button>
+		<button class="col text-light rounded py-4 border-0 me-1  me-md-0" onclick="enrollSecondary()">Secondary</button>
+		<button class="col text-light rounded py-4 border-0" onclick="enrollTertiary()">Tertiary</button>
+	</div>
+
+	<div class="container mx-auto my-3 mb-md-0 mt-md-5" id="levelsPreview">
+		<div class="row mx-auto">
+			<div class="col-6 col-md-3 darkgreen-desaturated p-2">
+				<p class="text-light text-small">FEU Diliman’s Primary level sparks curiosity through fun, numbers, and language. With interactive learning, we build a strong foundation for young minds while nurturing character and creativity.</p>
+				<div class="text-light text-end" id="levelLists">
+					<p class="mb-0">• Kinder</p>
+					<p class="mb-1">• Grade School</p>
+				</div>
+			</div>
+			<div id="previewLevel" class="col-6 col-md-9 px-0">
+				<img class="img-cover" id="previewImage" src="images/preview_primary.png">
+			</div>
+		</div>
+	</div>
+	
+	<div class="mx-auto container mb-5" id="levelsForm">
+		<div> <!-- Primary -->
+			<form class="row">
+				<section class="my-4 col-md-6  col-lg-4">
+					<h1 class="fs-2">ENROLLMENT</h1>
+					<label class="requiredField">
+						Incoming Grade Level 
+						<select class="ms-3">
+							<option value="" disabled selected> </option>
+							<option>Kinder</option>
+							<option>Grade 1</option>
+							<option>Grade 2</option>
+							<option>Grade 3</option>
+							<option>Grade 4</option>
+							<option>Grade 5</option>
+							<option>Grade 6</option>
+						</select>
+					</label>
+				</section>
+				<section class="my-4 col-md-6  col-lg-4">
+					<h1 class="fs-2">ENROLEE'S INFO</h1>
+					<label class="requiredField mb-4">
+						Last Name <input class="ms-2" type="text" required>
+					</label>
+					<label class="requiredField mb-4">
+						First Name <input class="ms-2" type="text" required>
+					</label>
+					<label class="requiredField dateField mb-4">
+						Birthdate 
+						<select class="ms-3">
+							<option value="" disabled selected>Month</option>
+							<option>Jan</option><option>Feb</option><option>Mar</option>
+							<option>Apr</option><option>May</option><option>Jun</option>
+							<option>Jul</option><option>Aug</option><option>Sep</option>
+							<option>Oct</option><option>Nov</option><option>Dec</option>
+						</select>
+						<select class="dayInput ms-2">
+							<option value="" disabled selected>Day</option>
+						</select>
+						<select class="yearInput ms-2">
+							<option disabled selected>Year</option>
+						</select>
+					</label>
+					<label class="requiredField mb-4" required>
+						Gender
+						<label class="ms-3">
+							<input type="radio" name="gender">
+							Male
+						</label>
+						<label class="ms-3">
+							<input type="radio" name="gender">
+							Female
+						</label>
+					</label>
+					<br>
+					<label class="requiredField mb-3">
+						LRN <input type="number" class="ms-3" required>
+					</label>
+				</section>
+				<section class="my-4 col-lg-4">
+					<h1 class="fs-2">HOME ADDRESS</h1>
+					<label class="requiredField mb-4">
+						Country <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						State/Province <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						City <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						Block No., Street, ... <input type="text" class="ms-2" required>
+					</label>
+				</section>
+				<input class="darkgreen-gradient text-light text-shadow p-2 px-5 mx-auto" type="submit" value="Enroll Now">
+			</form>
+		</div>
+		
+		<div> <!-- Secondary -->
+			<form>
+				<section>
+					<h1></h1>
+				</section>
+			</form>
+		</div>
+		
+		<div> <!-- Tertiary -->
+			<form>
+				<section>
+					<h1></h1>
+				</section>
+			</form>
+		</div>
+	</div>
+
+	<div id="footer" class="text-light pb-5">
+		<div class="mx-4">
+			<div class="text-center">
+				<p class="fs-2 pt-4">FEU DILIMAN</p>
+				<p class="text-secondary">Sampaguita Avenue, Mapayapa Village III, Pasong Tamo, Quezon City 1101</p>
+			</div>
+			<hr>
+			<div class="row">
+				<div id="socials" class="col-4 col-md-2">
+					<p>Socials</p>
+					<img class="img-fluid mb-3 d-block" src="images/contactInsta.png">
+					<img class="img-fluid" src="images/contactFB.png">
+				</div>
+				<div class="col-8 px-0">
+					<p id="followus">Follow Us</p>
+					<div class="row">
+						<img class="img-fluid mb-3 float-start col-2 px-0" src="images/contactPhone.png">
+						<p class="col-9 text-secondary">0906 407 6850</p>
+					</div>
+					<div class="row">
+						<img class="img-fluid mb-3 float-start col-2 px-0" src="images/contactMail.png">
+						<p class="col-9 text-secondary">info@feudiliman.edu.ph</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
