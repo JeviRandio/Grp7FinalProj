@@ -359,57 +359,27 @@ input[type=submit]:active {
 }
 
 /*Style sa scholarship.html*/
-.scholarship-header {
-    position: sticky;
-    top: 0;
-    background: #6DA34D;
-    padding: 20px;
-    color: white;
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    z-index: 1000;
-}
-
-.content-container {
-    margin-top: 80px;
-}
-
-.section-title {
-    margin-top: 20px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.green-line {
-    border-bottom: 3px solid green;
-    margin: 10px 0;
-}
-
-.btn-success {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
 .hidden {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .show {
     opacity: 1;
     transform: translateY(0);
+    animation: fadeIn 0.6s ease-out;
 }
 
-#footer {
-    background-color: #333;
-    color: white;
-    padding-bottom: 40px;
+.green-line {
+    border-top: 4px solid green;
+    margin: 20px 0;
+    width: 80%;
+    margin: 0 auto;
 }
 
-#footer p {
-    margin: 5px 0;
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 /*Hanggang dito style sa scholarship.html*/
