@@ -110,7 +110,23 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const hiddenElements = document.querySelectorAll(".hidden");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+        hiddenElements.forEach(el => observer.observe(el));
+    </script>
+
+    <script>
+        document.querySelector(".btn-success").addEventListener("click", function() {
+            window.location.href = "admission_primary.html";
+        });
+    </script>
 
 </body>
 </html>
