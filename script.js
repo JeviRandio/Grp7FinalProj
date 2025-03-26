@@ -98,7 +98,7 @@ function admissionPage(level){
 }
 
 //Script sa scholarship.html
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const hiddenElements = document.querySelectorAll(".hidden");
 
