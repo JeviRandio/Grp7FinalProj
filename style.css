@@ -184,7 +184,7 @@ body {
 }
 
 #footer {
-	background: #030 !important;
+	background: #030;
 	order: 10
 }
 
@@ -281,8 +281,24 @@ body {
 	color: #d00;
 }
 
+#enrollmentField{
+	display: block;
+	margin-bottom: 15px;
+}
+
 #levelsForm input, #levelsForm select {
 	border: 0
+}
+
+#enrollmentField select {
+    width: 200px; /* Fixed width */
+    white-space: normal; /* Allow wrapping */
+    word-wrap: break-word; /* Ensure words break if necessary */
+    overflow-wrap: break-word;
+}
+
+option {
+    white-space: pre-wrap; /* Allow line breaks within options */
 }
 
 input[type=submit]{
