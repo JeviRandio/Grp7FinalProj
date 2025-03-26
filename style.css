@@ -382,4 +382,13 @@ input[type=submit]:active {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+
+#footer {
+     background-color: #333;
+     color: white;
+     padding-bottom: 40px;
+}
+ #footer p {
+     margin: 5px 0;
+ }
 /*Hanggang dito style sa scholarship.html*/
