@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const applyButton = document.querySelector(".btn-success");
     if (applyButton) {
         applyButton.addEventListener("click", function () {
-            window.location.href = "admission_primary.html";
+            window.location.href = "admission.html";
         });
     }
 });
