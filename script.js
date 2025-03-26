@@ -98,20 +98,22 @@ function admissionPage(level){
 }
 
  //Script sa scholarship.html
- document.addEventListener("DOMContentLoaded", () => {
-     const hiddenElements = document.querySelectorAll(".hidden");
- 
-     const observer = new IntersectionObserver(entries => {
-         entries.forEach(entry => {
-             if (entry.isIntersecting) {
-                 entry.target.classList.add("show");
-                 observer.unobserve(entry.target);
-             }
-         });
-     }, { threshold: 0.2 }); // Adjust threshold if needed
- 
-     hiddenElements.forEach(el => observer.observe(el));
- });
+document.addEventListener("DOMContentLoaded", () => {
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                entry.target.classList.remove("hidden"); // Fix: Remove 'hidden' class
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    hiddenElements.forEach(el => observer.observe(el));
+});
+
  
  document.addEventListener("DOMContentLoaded", function () {
      const applyButton = document.querySelector(".btn-success");
