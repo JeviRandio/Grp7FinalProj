@@ -106,15 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
-                entry.target.classList.remove("hidden");
+                observer.unobserve(entry.target); // Stops observing after animation
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.2 }); // Adjust threshold if needed
 
     hiddenElements.forEach(el => observer.observe(el));
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const applyButton = document.querySelector(".btn-success");
