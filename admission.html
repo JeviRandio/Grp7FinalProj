@@ -4,7 +4,7 @@
 	<title>FEU Diliman - Admission</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">	<link href="style.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
+	<Flink href="style.css" rel="stylesheet">
 </head>
 <body class="gradientGray">
 	<nav class="navbar navbar-expand-md border-bottom border-light border-1">
@@ -27,7 +27,7 @@
 						<a class="nav-link active" aria-current="page">Admission</a>
 					</li>
 					<li class="nav-item me-4">
-						<a class="nav-link" href="scholarships.html">Scholarships</a>
+						<a class="nav-link" href="#">Scholarships</a>
 					</li>
 				</ul>
 			</div>
@@ -58,14 +58,14 @@
 	</div>
 	
 	<div class="mx-auto container mb-5" id="levelsForm">
-		<div> <!-- Primary -->
+		<div id="primaryForm"> <!-- Primary -->
 			<form class="row">
 				<section class="my-4 col-md-6  col-lg-4">
 					<h1 class="fs-2">ENROLLMENT</h1>
 					<label class="requiredField">
 						Incoming Grade Level 
 						<select class="ms-3">
-							<option value="" disabled selected> </option>
+							<option value="" disabled selected>Select Grade Level </option>
 							<option>Kinder</option>
 							<option>Grade 1</option>
 							<option>Grade 2</option>
@@ -77,7 +77,7 @@
 					</label>
 				</section>
 				<section class="my-4 col-md-6  col-lg-4">
-					<h1 class="fs-2">ENROLEE'S INFO</h1>
+					<h1 class="fs-2">ENROLLEE'S INFO</h1>
 					<label class="requiredField mb-4">
 						Last Name <input class="ms-2" type="text" required>
 					</label>
@@ -135,19 +135,159 @@
 			</form>
 		</div>
 		
-		<div> <!-- Secondary -->
-			<form>
-				<section>
-					<h1></h1>
+		<div id="secondaryForm" style="display: none;"> <!-- Secondary -->
+			<form class="row">
+				<section class="my-4 col-md-6  col-lg-4">
+					<h1 class="fs-2">ENROLLMENT</h1>
+					<label class="requiredField">
+						Incoming Grade Level 
+						<select class="ms-3">
+							<option value="" disabled selected>Select Grade Level </option>
+							<option>Grade 7</option>
+							<option>Grade 8</option>
+							<option>Grade 9</option>
+							<option>Grade 10</option>
+							<option>Grade 11</option>
+							<option>Grade 12</option>
+						</select>
+					</label>
 				</section>
+				<section class="my-4 col-md-6 col-lg-4">
+					<h1 class="fs-2">ENROLLEE'S INFO</h1>
+					<label class="requiredField mb-4">
+						Last Name <input class="ms-2" type="text" required>
+					</label>
+					<label class="requiredField mb-4">
+						First Name <input class="ms-2" type="text" required>
+					</label>
+					<label class="requiredField dateField mb-4">
+						Birthdate 
+						<select class="ms-3">
+							<option value="" disabled selected>Month</option>
+							<option>Jan</option><option>Feb</option><option>Mar</option>
+							<option>Apr</option><option>May</option><option>Jun</option>
+							<option>Jul</option><option>Aug</option><option>Sep</option>
+							<option>Oct</option><option>Nov</option><option>Dec</option>
+						</select>
+						<select class="dayInput ms-2">
+							<option value="" disabled selected>Day</option>
+						</select>
+						<select class="yearInput ms-2">
+							<option disabled selected>Year</option>
+						</select>
+					</label>
+					<label class="requiredField mb-4" required>
+						Gender
+						<label class="ms-3">
+							<input type="radio" name="gender">
+							Male
+						</label>
+						<label class="ms-3">
+							<input type="radio" name="gender">
+							Female
+						</label>
+					</label>
+					<br>
+					<label class="requiredField mb-3">
+						LRN <input type="number" class="ms-3" required>
+					</label>
+				</section>
+				<section class="my-4 col-lg-4">
+					<h1 class="fs-2">HOME ADDRESS</h1>
+					<label class="requiredField mb-4">
+						Country <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						State/Province <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						City <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						Block No., Street, ... <input type="text" class="ms-2" required>
+					</label>
+				</section>
+				<input class="darkgreen-gradient text-light text-shadow p-2 px-5 mx-auto" type="submit" value="Enroll Now">
 			</form>
 		</div>
 		
-		<div> <!-- Tertiary -->
-			<form>
-				<section>
-					<h1></h1>
+		<div id="tertiaryForm" style="display: none;"> <!-- Tertiary -->
+			<form class="row">
+				<section class="my-4 col-md-6  col-lg-4">
+					<h1 class="fs-2">ENROLLMENT</h1>
+					<label class="requiredField" id="enrollmentField">
+						Program Offerings
+						<select id="programOfferings"class="ms-3" >
+							<option value="" disabled selected>Select a Program </option>
+							<option value="IT">Bachelor of Science in Information Technology</option>
+							<option value="CS">Bachelor of Science in Computer Science</option>
+							<option value="ACC">Bachelor of Science in Accountancy</option>
+							<option value="BA">Bachelor of Science in Business Administration</option>
+						</select>
+					</label>
+					<label class="requiredField" id="enrollmentField">
+						Specialization
+						<select id="specialization" class="ms-3">
+							<option value="" disabled selected>Select a Specialization</option>
+						</select>
+					</label>
 				</section>
+				<section class="my-4 col-md-6 col-lg-4">
+					<h1 class="fs-2">ENROLLEE'S INFO</h1>
+					<label class="requiredField mb-4">
+						Last Name <input class="ms-2" type="text" required>
+					</label>
+					<label class="requiredField mb-4">
+						First Name <input class="ms-2" type="text" required>
+					</label>
+					<label class="requiredField dateField mb-4">
+						Birthdate 
+						<select class="ms-3">
+							<option value="" disabled selected>Month</option>
+							<option>Jan</option><option>Feb</option><option>Mar</option>
+							<option>Apr</option><option>May</option><option>Jun</option>
+							<option>Jul</option><option>Aug</option><option>Sep</option>
+							<option>Oct</option><option>Nov</option><option>Dec</option>
+						</select>
+						<select class="dayInput ms-2">
+							<option value="" disabled selected>Day</option>
+						</select>
+						<select class="yearInput ms-2">
+							<option disabled selected>Year</option>
+						</select>
+					</label>
+					<label class="requiredField mb-4" required>
+						Gender
+						<label class="ms-3">
+							<input type="radio" name="gender">
+							Male
+						</label>
+						<label class="ms-3">
+							<input type="radio" name="gender">
+							Female
+						</label>
+					</label>
+					<br>
+					<label class="requiredField mb-3">
+						LRN <input type="number" class="ms-3" required>
+					</label>
+				</section>
+				<section class="my-4 col-lg-4">
+					<h1 class="fs-2">HOME ADDRESS</h1>
+					<label class="requiredField mb-4">
+						Country <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						State/Province <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						City <input type="text" class="ms-2" required>
+					</label><br>
+					<label class="requiredField mb-4">
+						Block No., Street, ... <input type="text" class="ms-2" required>
+					</label>
+				</section>
+				<input class="darkgreen-gradient text-light text-shadow p-2 px-5 mx-auto" type="submit" value="Enroll Now">
 			</form>
 		</div>
 	</div>
