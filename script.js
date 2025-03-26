@@ -1,3 +1,14 @@
+console.log(`
+Group 7 - DW21
+Carreon, Lanz Jeri Tyler F.
+Erandio, Jayvee P.
+Malanay, Gery Ashen P.
+Sycayco, Nikko Jett
+Utsumi, Ryoshio
+
+An Advanced Web Design Project - FEU Diliman's Admission Department
+`);
+
 document.addEventListener("DOMContentLoaded", function () {
     const specializationOptions = {
         IT: ["Web and Mobile Applications", "Animation and Game Development", "Cybersecurity"],
@@ -17,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error: #specialization not found.");
         return;
     }
-
-    console.log("Both dropdowns found. Attaching event listener...");
 
     programSelect.addEventListener("change", function () {
         const selectedProgram = this.value;
@@ -74,25 +83,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Birthdate Field
-function populateYears() {
-    let yearSelect = document.querySelector(".dateField").querySelector(".yearInput");
-    let currentYear = new Date().getFullYear() - 5;
-    for (let i = currentYear; i >= 1950; i--) {
-        let option = document.createElement("option");
-        option.value = i;
-        option.text = i;
-        yearSelect.appendChild(option);
-    }
+function populateYears(index) {
+	try{
+		let yearSelect = document.querySelectorAll(".dateField")[index].querySelector(".yearInput");
+
+		let currentYear = new Date().getFullYear() - 5;
+		for (let i = currentYear; i >= 1950; i--) {
+			let option = document.createElement("option");
+			option.value = i;
+			option.text = i;
+			yearSelect.appendChild(option);
+		}
+	} catch {}
 }
 
-function populateDays() {
-    let daySelect = document.querySelector(".dateField").querySelector(".dayInput");
-    for (let i = 1; i <= 31; i++) {
-        let option = document.createElement("option");
-        option.value = i;
-        option.text = i;
-        daySelect.appendChild(option);
-    }
+function populateDays(index) {
+	try{
+		let daySelect = document.querySelectorAll(".dateField")[index].querySelector(".dayInput");
+		for (let i = 1; i <= 31; i++) {
+			let option = document.createElement("option");
+			option.value = i;
+			option.text = i;
+			daySelect.appendChild(option);
+		}
+	}catch{}
 }
 
 populateYears();
@@ -101,52 +115,19 @@ populateDays();
 const levelsForm = document.querySelector("#levelsForm");
 const levelsOptions = document.querySelector("#levelsOptions");
 
-function enrollPrimary(){
-	let child = levelsForm.children;
-	child[0].style.display = "block"
-	child[1].style.display = "none"
-	child[2].style.display = "none";
-	levelsOptions.children[0].classList.add("active-level");
-	levelsOptions.children[1].classList.remove("active-level");
-	levelsOptions.children[2].classList.remove("active-level");
-}
-function enrollSecondary(){
-	let child = levelsForm.children;
-	child[0].style.display = "none"
-	child[1].style.display = "block"
-	child[2].style.display = "none";
-	levelsOptions.children[0].classList.remove("active-level");
-	levelsOptions.children[1].classList.add("active-level");
-	levelsOptions.children[2].classList.remove("active-level");
-}
-function enrollTertiary(){
-	let child = levelsForm.children;
-	child[0].style.display = "none"
-	child[1].style.display = "none"
-	child[2].style.display = "block";
-	levelsOptions.children[0].classList.remove("active-level");
-	levelsOptions.children[1].classList.remove("active-level");
-	levelsOptions.children[2].classList.add("active-level");
-}
 
-const params = new URLSearchParams(window.location.search);
-	if (params.get("enroll") === "secondary") {
-		enrollSecondary();
-	}
-	else if (params.get("enroll") === "tertiary") {
-		enrollTertiary();
-	}
-  
-function admissionPage(level){
-	window.location.href = "admission.html?enroll=" + level;
-}
+let levelsPreview = document.querySelector("#levelsPreview")
+let previewImage, previewText, levelLists; 
 
-const levelsPreview = document.querySelector("#levelsPreview");
-const previewImage = document.querySelector("#previewImage");
-const previewText = levelsPreview.querySelector("p.text-small");
-const levelLists = document.querySelector("#levelLists");
+function refreshLevel(){
+	levelsPreview = document.querySelector("#levelsPreview");
+	previewImage = document.querySelector("#previewImage");
+	previewText = levelsPreview.querySelector("p.text-small");
+	levelLists = document.querySelector("#levelLists");
+}
 
 function enrollPrimary() {
+	refreshLevel()
     // Show primary form, hide others
     document.getElementById("primaryForm").style.display = "block";
     document.getElementById("secondaryForm").style.display = "none";
@@ -159,24 +140,30 @@ function enrollPrimary() {
 
     // Update button active state
     updateActiveButton(0);
+	populateYears(0)
+	populateDays(0)
 }
 
 function enrollSecondary() {
+	refreshLevel()
     // Show secondary form, hide others
     document.getElementById("primaryForm").style.display = "none";
     document.getElementById("secondaryForm").style.display = "block";
     document.getElementById("tertiaryForm").style.display = "none";
 
     // Change preview content
-    previewImage.src = "images/preview_secondary.png";
+	previewImage.setAttribute("src", "images/preview_secondary.png")
     previewText.textContent = "FEU Diliman’s Secondary level strengthens analytical and critical thinking skills. Our curriculum prepares students for higher education with a strong academic foundation.";
     levelLists.innerHTML = "<p class='mb-0'>• Junior High</p><p class='mb-1'>• Senior High</p>";
 
     // Update button active state
     updateActiveButton(1);
+	populateYears(1)
+	populateDays(1)
 }
 
 function enrollTertiary() {
+	refreshLevel()
     // Show tertiary form, hide others
     document.getElementById("primaryForm").style.display = "none";
     document.getElementById("secondaryForm").style.display = "none";
@@ -190,6 +177,8 @@ function enrollTertiary() {
 	
     // Update button active state
     updateActiveButton(2);
+	populateYears(2)
+	populateDays(2)
 }
 
 function updateActiveButton(index) {
@@ -200,19 +189,14 @@ function updateActiveButton(index) {
 }
 
 
-// Handle URL Parameters on Load
-document.addEventListener("DOMContentLoaded", function () {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("enroll") === "secondary") {
-        enrollSecondary();
-    } else if (params.get("enroll") === "tertiary") {
-        enrollTertiary();
-    } else {
-        enrollPrimary();
-    }
-});
-
-
-
-
-
+const params = new URLSearchParams(window.location.search);
+	if (params.get("enroll") === "secondary") {
+		enrollSecondary();
+	}
+	else if (params.get("enroll") === "tertiary") {
+		enrollTertiary();
+	}
+  
+function admissionPage(level){
+	window.location.href = "admission.html?enroll=" + level;
+}
