@@ -96,3 +96,26 @@ const params = new URLSearchParams(window.location.search);
 function admissionPage(level){
 	window.location.href = "admission.html?enroll=" + level;
 }
+
+//Script sa scholarship.html
+
+const hiddenElements = document.querySelectorAll(".hidden");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+hiddenElements.forEach(el => observer.observe(el));
+
+document.addEventListener("DOMContentLoaded", function () {
+    const applyButton = document.querySelector(".btn-success");
+    if (applyButton) {
+        applyButton.addEventListener("click", function () {
+            window.location.href = "admission_primary.html";
+        });
+    }
+});
+
+//Hanggang dito, script sa scholarship.html
