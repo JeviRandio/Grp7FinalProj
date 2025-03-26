@@ -378,7 +378,7 @@ input[type=submit]:active {
 
 @keyframes bounceIn {
     0% { opacity: 0; transform: translateY(30px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 /*Hanggang dito style sa scholarship.html*/
