@@ -26,11 +26,15 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <h2 class="text-center hidden">Scholarships, Grants, and Discounts</h2>
+    <!-- Sticky Scholarship Header -->
+    <div class="scholarship-header">
+        Scholarships, Grants, and Discounts
+    </div>
+
+    <div class="container content-container">
+        <h3 class="section-title">Freshmen Applicants</h3>
         <div class="green-line"></div>
 
-        <h3 class="hidden">Freshmen Applicants</h3>
         <h4 class="hidden">President’s Scholarship</h4>
         <p class="hidden">Grade 12 students who will graduate with honors, high honors, or highest honors.</p>
         <ul class="hidden">
@@ -82,34 +86,6 @@
         </div>
     </div>
 
-    <div id="footer" class="text-light pb-5 mt-5">
-        <div class="mx-4">
-            <div class="text-center">
-                <p class="fs-2 pt-4">FEU DILIMAN</p>
-                <p class="text-secondary">Sampaguita Avenue, Mapayapa Village III, Pasong Tamo, Quezon City 1101</p>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-4 col-md-2">
-                    <p>Socials</p>
-                    <img class="img-fluid mb-3 d-block" src="images/contactInsta.png">
-                    <img class="img-fluid" src="images/contactFB.png">
-                </div>
-                <div class="col-8 px-0">
-                    <p>Follow Us</p>
-                    <div class="row">
-                        <img class="img-fluid mb-3 float-start col-2 px-0" src="images/contactPhone.png">
-                        <p class="col-9 text-secondary">0906 407 6850</p>
-                    </div>
-                    <div class="row">
-                        <img class="img-fluid mb-3 float-start col-2 px-0" src="images/contactMail.png">
-                        <p class="col-9 text-secondary">info@feudiliman.edu.ph</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const hiddenElements = document.querySelectorAll(".hidden");
@@ -118,7 +94,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
-                        entry.target.classList.remove("hidden"); // Fix: Remove 'hidden' class
+                        entry.target.classList.remove("hidden");
                         observer.unobserve(entry.target);
                     }
                 });
