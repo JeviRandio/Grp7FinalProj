@@ -200,3 +200,16 @@ const params = new URLSearchParams(window.location.search);
 function admissionPage(level){
 	window.location.href = "admission.html?enroll=" + level;
 }
+
+function homePage(){
+	window.location.href = "index.html";
+}
+
+const forms = document.querySelectorAll("form");
+for (i of forms)
+	i.addEventListener("submit", function(event) {
+		event.preventDefault(); // Prevent form submission
+
+		var enrollModal = new bootstrap.Modal(document.getElementById("enrollModal"));
+		enrollModal.show();
+	});
