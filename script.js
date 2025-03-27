@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
         IT: ["Web and Mobile Applications", "Animation and Game Development", "Cybersecurity"],
         CS: ["Software Engineering"],
         ACC: ["N/A"],
-        BA: ["Marketing Management & Multimedia Design", "Financial Management & Business Analytics", "Operations & Service Management"]
+        BA: ["Marketing Management & Multimedia Design", "Financial Management & Business Analytics", "Operations & Service Management"],
+        PSY: ["N/A"],
+        TM: ["N/A"]
     };
 
     const programSelect = document.getElementById("programOfferings");
