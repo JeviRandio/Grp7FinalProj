@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         IT: ["Web and Mobile Applications", "Animation and Game Development", "Cybersecurity"],
         CS: ["Software Engineering"],
         ACC: ["N/A"],
-        BA: ["Marketing Management", "Financial Management", "Operations Management"]
+        BA: ["Marketing Management & Multimedia Design", "Financial Management & Business Analytics", "Operations & Service Management"]
     };
 
     const programSelect = document.getElementById("programOfferings");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Program selected:", selectedProgram);
 
         // Clear old options
-        specializationSelect.innerHTML = '<option value="" disabled selected>Select a specialization</option>';
+        specializationSelect.innerHTML = '<option value="" disabled selected>Select a Specialization/Major</option>';
 
         // Populate with new options
         if (specializationOptions[selectedProgram]) {
