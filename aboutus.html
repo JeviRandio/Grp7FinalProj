@@ -30,15 +30,19 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 20px 0;
+			overflow: hidden;
+			height: 150px
         }
+		
+		.gallery-row > * {
+			height: 100%
+		}
 
-        .gallery-row .col-md-4 img {
+        .gallery-row img {
             width: 100%;
-            height: 200px; /* Adjust height for uniformity */
             object-fit: cover;
             object-position: center;
-            border: 2px solid rgb(0, 128, 49); /* Adds border effect similar to the screenshot */
+			height: 100%;
         }
         .about-header {
             background-color: #4CAF50;
@@ -97,10 +101,10 @@
         <div class="gallery-top">
             <img src="images/feudpic3.jpg" alt="FEU Diliman Main Building" class="img-fluid">
         </div>
-        <div class="gallery-row">
-            <div class="col-md-4"><img src="images/feudpic2.jpg" alt="Event" class="img-fluid"></div>
-            <div class="col-md-4"><img src="images/feudpic1.jpg" alt="Victory Celebration" class="img-fluid"></div>
-            <div class="col-md-4"><img src="images/feudpic4.jpg" alt="Soccer" class="img-fluid"></div>
+        <div class="gallery-row pb-3 border border-light">
+            <div class="col-4 border border-2"><img src="images/feudpic2.jpg" alt="Event" class="img-fluid"></div>
+            <div class="col-4 border border-2"><img src="images/feudpic1.jpg" alt="Victory Celebration" class="img-fluid"></div>
+            <div class="col-4 border border-2"><img src="images/feudpic4.jpg" alt="Soccer" class="img-fluid"></div>
         </div>
     </div>
 
