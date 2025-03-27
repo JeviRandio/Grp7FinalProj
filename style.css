@@ -8,6 +8,12 @@ body {
 	display: grid;
 }
 
+a {
+	text-decoration: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
 .navbar {
 	background: #040
 }
